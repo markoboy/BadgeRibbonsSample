@@ -1,0 +1,167 @@
+.badge__ribbon--green::before, .badge__ribbon--red::before, .badge__ribbon--blue::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 45%;
+  left: 50%;
+  z-index: -1;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+      -ms-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.badge {
+  position: relative;
+  height: 70px;
+  width: 50px;
+  pointer-events: none;
+  z-index: 1;
+  margin: 5px;
+}
+
+.badge__ribbon {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50px;
+  height: 70%;
+  padding: 0 4px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  line-height: 0.9;
+  z-index: 1;
+  border-radius: 5px 5px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.badge__ribbon > * {
+  z-index: 1;
+}
+
+.badge__ribbon--green {
+  background-color: #1b9546;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1b9546), to(#23c05a));
+  background-image: -webkit-linear-gradient(top, #1b9546, #23c05a);
+  background-image: -o-linear-gradient(top, #1b9546, #23c05a);
+  background-image: linear-gradient(to bottom, #1b9546, #23c05a);
+  border: 3px solid #27d664;
+  border-bottom: none;
+}
+
+.badge__ribbon--green::before {
+  background-color: #1b9546;
+  background-image: -webkit-linear-gradient(315deg, #20af52, #27d664);
+  background-image: -o-linear-gradient(315deg, #20af52, #27d664);
+  background-image: linear-gradient(135deg, #20af52, #27d664);
+  border: 2px solid #27d664;
+}
+
+.badge__ribbon--red {
+  background-color: #ce181e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ce181e), to(#e73238));
+  background-image: -webkit-linear-gradient(top, #ce181e, #e73238);
+  background-image: -o-linear-gradient(top, #ce181e, #e73238);
+  background-image: linear-gradient(to bottom, #ce181e, #e73238);
+  border: 3px solid #ea494e;
+  border-bottom: none;
+}
+
+.badge__ribbon--red::before {
+  background-color: #ce181e;
+  background-image: -webkit-linear-gradient(315deg, #e52026, #ea494e);
+  background-image: -o-linear-gradient(315deg, #e52026, #ea494e);
+  background-image: linear-gradient(135deg, #e52026, #ea494e);
+  border: 2px solid #ea494e;
+}
+
+.badge__ribbon--blue {
+  background-color: #017edb;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#017edb), to(#1199fe));
+  background-image: -webkit-linear-gradient(top, #017edb, #1199fe);
+  background-image: -o-linear-gradient(top, #017edb, #1199fe);
+  background-image: linear-gradient(to bottom, #017edb, #1199fe);
+  border: 3px solid #2aa4fe;
+  border-bottom: none;
+}
+
+.badge__ribbon--blue::before {
+  background-color: #017edb;
+  background-image: -webkit-linear-gradient(315deg, #0190f9, #2aa4fe);
+  background-image: -o-linear-gradient(315deg, #0190f9, #2aa4fe);
+  background-image: linear-gradient(135deg, #0190f9, #2aa4fe);
+  border: 2px solid #2aa4fe;
+}
+
+.badge__icon {
+  position: absolute;
+  font-size: 30px;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.badge__icon--green {
+  color: #1b9546;
+  -webkit-transform: rotate(-55deg) translate(0, -80%);
+      -ms-transform: rotate(-55deg) translate(0, -80%);
+          transform: rotate(-55deg) translate(0, -80%);
+}
+
+.badge__icon--red {
+  color: #ce181e;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.badge__icon--blue {
+  color: #017edb;
+}
+
+.badge__shadow {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.7);
+          box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.7);
+  top: 100%;
+  left: 50%;
+  height: 8px;
+  width: 36px;
+  border-radius: 100%;
+  -webkit-transform: translateX(-50%) rotateX(60deg);
+          transform: translateX(-50%) rotateX(60deg);
+  z-index: -2;
+}
+
+.font--bold {
+  font-weight: 700;
+}
+/*# sourceMappingURL=bagde.css.map */

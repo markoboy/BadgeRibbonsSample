@@ -1,0 +1,134 @@
+$colour--green: #1b9546;
+$colour--red: #ce181e;
+$colour--blue: #017edb;
+
+%badge-arrow {
+  box-sizing: border-box;
+  display: block;
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 45%;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@mixin badge-box-background($color) {
+  background-color: $color;
+  background-image: linear-gradient(to bottom, $color, lighten($color, 10%));
+  border: 3px solid lighten($color, 15%);
+  border-bottom: none;
+}
+
+@mixin badge-arrow-background($color) {
+  background-color: $color;
+  background-image: linear-gradient(135deg, lighten($color, 6%), lighten($color, 15%));
+  border: 2px solid lighten($color, 15%);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.badge {
+  position: relative;
+  height: 70px;
+  width: 50px;
+  pointer-events: none;
+  z-index: 1;
+  margin: 5px;
+
+  &__ribbon {
+    box-sizing: border-box;
+    width: 50px;
+    height: 70%;
+    padding: 0 4px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    line-height: 0.9;
+    z-index: 1;
+    border-radius: 5px 5px 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+      z-index: 1;
+    }
+
+    &--green {
+      @include badge-box-background($colour--green);
+
+      &::before {
+        @extend %badge-arrow;
+        @include badge-arrow-background($colour--green);
+      }
+    }
+
+    &--red {
+      @include badge-box-background($colour--red);
+
+      &::before {
+        @extend %badge-arrow;
+        @include badge-arrow-background($colour--red);
+      }
+    }
+
+    &--blue {
+      @include badge-box-background($colour--blue);
+
+      &::before {
+        @extend %badge-arrow;
+        @include badge-arrow-background($colour--blue);
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 30px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+
+    &--green {
+      color: $colour--green;
+      transform: rotate(-55deg) translate(0, -80%);
+    }
+
+    &--red {
+      color: $colour--red;
+      transform: translate(-50%, 0);
+    }
+
+    &--blue {
+      color: $colour--blue;
+    }
+  }
+
+  &__shadow {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.7);
+    top: 100%;
+    left: 50%;
+    height: 8px;
+    width: 36px;
+    border-radius: 100%;
+    transform: translateX(-50%) rotateX(60deg);
+    z-index: -2;
+  }
+}
+
+.font--bold {
+  font-weight: 700;
+}
